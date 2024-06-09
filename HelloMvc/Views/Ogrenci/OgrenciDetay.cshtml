@@ -1,0 +1,40 @@
+﻿@model OgrViewModel
+@{
+   
+}
+
+    <h3>Öğrenci Detayları</h3>
+    <h4>ViewData il gelen öğrenci bilgileri</h4>
+    @if (ViewData["ogrenci"] !=null)
+    {
+        <p>Ad:@(((Ogrenci)ViewData["ogrenci"]).Ad)</p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı</p>
+    }
+
+    <h4>ViewBag ile gelen öğrenci bilgileri</h4>
+    @if (ViewBag.student !=null)
+    {
+        <p>Ad:@ViewBag.student.Ad</p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı</p>
+    }
+    <h4>Model ile gelen öğrenci</h4>
+    <p>
+        @Model.Ogrenci.Ad
+    </p>
+    <h4>Model ile gelen öğrenci</h4>
+    <p>
+        @Model.Ogretmen.Ad
+    </p>
+    <h4>Model ile gelen öğrenci</h4>
+    <p>
+        @Model.Ders.DersAd
+    </p>
+    <h3>Ogretmen Detayları</h3>
+    <p>@ViewBag.teacher.Ad</p>
+

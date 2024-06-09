@@ -1,0 +1,17 @@
+﻿@model Ogrenci
+@{
+    ViewData["Title"] = "EditStudent";
+}
+
+<h1>Öğrenci Güncelleme</h1>
+
+<form asp-action="EditStudent" asp-controller="Student"  method="post">
+    <input asp-action="Ogrenciid" type="hidden" />
+    <label>Ad:</label>
+    <input type="text" asp-for="Ad" />
+    <label>Soyad</label>
+    <input type="text" asp-for="Soyad" />
+    <label>Numara</label>
+    <input type="number" asp-for="Numara" />
+    <input type="submit" value="Kaydet"/>
+</form>
