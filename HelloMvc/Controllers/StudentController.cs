@@ -32,6 +32,8 @@ namespace HelloMvc.Controllers
             }
             return RedirectToAction("Index");
         }
+
+
         public IActionResult EditStudent(int id)
         {
             Ogrenci ogr = null;

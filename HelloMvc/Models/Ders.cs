@@ -4,7 +4,9 @@
     {
         public int DersId { get; set; }
         public string DersAd { get; set; }
-        public string Kredi { get; set; }
+        public string DersKodu { get; set; }
 
+        public ICollection<OgrenciDersler> OgrenciDersleri { get; set; }
     }
 }
+

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<HelloMvc.Models.OgrenciDersler>
+@{
+    ViewData["Title"] = "Alinan Dersler";
+    int ogrenciid = (int)ViewBag.OgrenciId;
+}
+
+<h1>Öğrencinin Aldığı Dersler</h1>
+
+<a asp-action="OgrenciDersEkle" asp-controller="OgrenciDers" asp-route-ogrenciid="@ogrenciid" class="btn btn-outline-dark">Öğrenci İçin Ders Ekle</a>
+
+<table class="table table-striped table-bordered table-hover table-secondary">
+    <thead class="table-dark">
+        <tr>
+            <th>Öğrenci Id</th>
+            <th>Öğrenci Adı</th>
+            <th>Öğrenci Soyadı</th>
+            <th>Ders Id</th>
+            <th>Ders Adı</th>
+            <th>Ders Kodu</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ogrenciid</td>
+                <td>@item.Ogrenci.Ad</td>
+                <td>@item.Ogrenci.Soyad</td>
+                <td>@item.Dersid</td>
+                <td>@item.ders.DersAd</td>
+                <td>@item.ders.DersKodu</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

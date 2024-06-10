@@ -1,0 +1,23 @@
+﻿@model IEnumerable<HelloMvc.Models.Ders>
+@{
+    ViewData["Title"] = "Öğrenci İçin Ders Ekle";
+    int ogrenciid = (int)ViewData["OgrenciId"];
+}
+
+<h1>Öğrenci İçin Ders Ekle</h1>
+
+<form asp-action="OgrenciDersEkle" method="post">
+    <input type="hidden" name="ogrenciid" value="@ogrenciid" />
+    <div class="form-group">
+        <label class="fw-bold" for="dersid">Ders Seçin:</label>
+        <select class="form-control" id="dersid" name="dersid">
+            @foreach (var item in Model)
+            {
+                <option value="@item.DersId">@item.DersAd</option>
+            }
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-primary">Ekle</button>
+</form>
+

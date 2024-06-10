@@ -1,0 +1,26 @@
+﻿@model IEnumerable<OgrenciDersler>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Öğrenci Dersleri</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ogrenciid</th>
+            <th>dersid</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ogrenciid</td>
+                <td>@item.Dersid</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
